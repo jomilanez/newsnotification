@@ -1,0 +1,173 @@
+{
+    "news_item" : {
+        "dynamic": false,
+        "index_analyzer": "DefaultAnalyzer",
+        "search_analyzer": "DefaultAnalyzer",
+        "properties" : {
+            "title": {
+                "type" : "multi_field",
+                "fields": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "suggest": {
+                        "type": "string",
+                        "analyzer": "AutoCompleteAnalyzer"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "analyzer": "IcuAnalyzer_DE"
+                    }
+                }
+            },
+            "text": {"type": "string"},
+            "teaser": {"type": "string"},
+            "publish_date": {
+                "type": "date",
+                "format": "date_optional_time"
+            },
+            "category": {
+                "type" : "multi_field",
+                "fields": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "suggest": {
+                        "type": "string",
+                        "analyzer": "AutoCompleteAnalyzer"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "analyzer": "IcuAnalyzer_DE"
+                    }
+                }
+            },
+            "tags": {
+                "type" : "multi_field",
+                "fields": {
+                    "tags": {
+                        "type": "string"
+                    },
+                    "suggest": {
+                        "type": "string",
+                        "analyzer": "AutoCompleteAnalyzer"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "analyzer": "IcuAnalyzer_DE"
+                    }
+                }
+            },
+            "location": {
+                "type": "object",
+                "properties": {
+                    "coordinates": {"type": "geo_point"},
+                    "zipcode": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "postCode": {
+                                "type": "string"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "street": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "street": {
+                                "type": "string"
+                            },
+                            "suggest": {
+                                "type": "string",
+                                "analyzer": "AutoCompleteAnalyzer"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "administrative_district": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "administrative_district": {
+                                "type": "string"
+                            },
+                            "suggest": {
+                                "type": "string",
+                                "analyzer": "AutoCompleteAnalyzer"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "district": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "district": {
+                                "type": "string"
+                            },
+                            "suggest": {
+                                "type": "string",
+                                "analyzer": "AutoCompleteAnalyzer"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "neighborhood": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "neighborhood": {
+                                "type": "string"
+                            },
+                            "suggest": {
+                                "type": "string",
+                                "analyzer": "AutoCompleteAnalyzer"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "city": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "city": {
+                                "type": "string"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    },
+                    "name": {
+                        "type" : "multi_field",
+                        "fields": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "suggest": {
+                                "type": "string",
+                                "analyzer": "AutoCompleteAnalyzer"
+                            },
+                            "raw": {
+                                "type": "string",
+                                "analyzer": "IcuAnalyzer_DE"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
