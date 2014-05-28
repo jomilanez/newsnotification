@@ -6,11 +6,37 @@
 	<groupId>newsnotification</groupId>
 	<artifactId>newsnotification</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- default encoding for ALL reports -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- defaults: compiler-plugin -->
+		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<maven.compiler.source>1.7</maven.compiler.source>
+
+		<elasticsearch.version>1.2.0</elasticsearch.version>
+		<log4j.version>1.2.17</log4j.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>1.2.0</version>
+			<version>${elasticsearch.version}</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.jayway.jsonpath</groupId> -->
+<!-- 			<artifactId>json-path</artifactId> -->
+<!-- 			<version>0.9.1</version> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 
